@@ -18,35 +18,19 @@ A Chromium browser extension that highlights people and organizations as well as
 
 ## Installation
 
-### From the Chrome Web Store
-
-1. **Go to the [County Highlighter extension page](https://chromewebstore.google.com/detail/country-highlighter/jjhldkllehdfgipblabnojkpfoohcogi)**
-
-2. **Click “Add to Chrome” (or whatever your Chromium browser)**
+1. [**Go to the IA Defensa Country Highlighter page**](https://chromewebstore.google.com/detail/ia-defensa-country-highli/jjhldkllehdfgipblabnojkpfoohcogi) in the Chrome Web Store
+2. **Click “Add to Chrome”** (or equivalent for other Chromium browsers)
 
 ### Locally
 
-1. **Clone or download this repository**
+1. **Download** or clone this repository
+2. **Open Chrome** and navigate to `chrome://extensions/` (or equivalent in other Chromium browsers, like `edge://extensions/` or `vivaldi://extensions/`)
+3. **Enable developer mode** (top right toggle)
+4. **Click “Load unpacked”** and select the extension directory
 
-2. **Open extensions page, e.g.:**
+Afterwards, configure the extension according to your preferences and consider pinning it to your toolbar for easy access.
 
-   - Chrome: Navigate to `chrome://extensions/`
-   - Edge: Navigate to `edge://extensions/`
-
-3. **Enable developer mode:**
-
-   - Toggle “Developer mode” switch in the top-right corner
-
-4. **Load the extension:**
-
-   - Click “Load unpacked”
-   - Select the `country-highlighter` directory
-
-5. **Verify installation:**
-
-   - Extension icon should appear in your browser toolbar
-   - Click icon to see quick toggle
-   - Right-click icon → “Options” to configure settings
+Tip: Enable the extension in private mode (“Allow in Incognito”). The extension does not share any information with IA Defensa or third parties.
 
 ## Usage
 
