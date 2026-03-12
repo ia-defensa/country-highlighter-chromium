@@ -2,7 +2,7 @@
 
 A Chromium browser extension that highlights people and organizations as well as content from and about specific countries on social media platforms.
 
-🔒 This extension saves no data. Source code access is available. For business and government use, [purchase a license](https://payhip.com/iadefensa). Priority support and custom options available.
+🔒 This extension saves no data. The source code is available for auditing. The extension is free for personal use—for commercial use, [purchase a license](https://payhip.com/iadefensa). Priority support and custom options available.
 
 ## Features
 
@@ -56,126 +56,21 @@ Tip: Enable the extension in private mode (“Allow in Incognito”). The extens
 * Normal highlighting (yellow background)
 * Extension enabled
 
-## Supported Platforms
-
-A selection (easily extensible via config/platforms.json):
-
-* x.com, twitter.com
-* instagram.com, facebook.com, threads.com
-* linkedin.com, github.com
-* bsky.app
-* mastodon.social, mastodon.world, mastodon.online, mstdn.social, fosstodon.org, mas.to, techhub.social, indieweb.social, …
-
 ## How It Works
 
-1. **Primary matching (fast):** Scans for flag emoji first
-2. **Alias matching (thorough):** Then checks for country names in multiple languages
-3. **Word boundary detection:** Avoids false positives (e.g., “Germany” won’t match “many”)
-4. **Dynamic content:** Monitors page changes with MutationObserver (300 ms debounce)
-5. **Performance:** Only scans visible text nodes, skips scripts/styles
-
-### Browser Compatibility
-
-* Chrome 88+
-* Edge 88+
-* Brave (Chromium-based)
-* Opera (Chromium-based)
-
-Requires Manifest V3 support.
+1. Primary matching (fast): Scans for flag emoji first
+2. Alias matching (thorough): Then checks for country names in multiple languages
+3. Word boundary detection: Avoids false positives (e.g., “Germany” won’t match “many”)
+4. Dynamic content: Monitors page changes with MutationObserver (300 ms debounce)
+5. Performance: Only scans visible text nodes, skips scripts/styles
 
 ### Privacy
 
-* **No data collection:** Extension operates entirely locally
-* **No network requests:** All configuration files are bundled
-* **Chrome sync only:** Settings synced via Chrome’s built-in sync (optional)
+* No data collection: Extension operates entirely locally
+* No network requests: All configuration files are bundled
+* Chrome sync only: Settings synced via Chrome’s built-in sync (optional)
 
-## Customization for Developers
-
-### File Structure
-
-```
-country-highlighter/
-├── manifest.json          # Extension configuration
-├── content.js             # Main highlighting logic
-├── styles.css             # Content script styles
-├── options.html           # Settings page UI
-├── options.js             # Settings page logic
-├── popup.html             # Toolbar popup UI
-├── popup.js               # Toolbar popup logic
-├── config/
-│   ├── countries.json     # Country definitions
-│   ├── platforms.json     # Platform list
-│   └── styles.js          # Style configuration
-└── images/                # Extension icons (16px, 48px, 128px)
-    ├── icon-16.png
-    ├── icon-48.png
-    ├── icon-128.png
-    └── icon.xcf           # Source file (GIMP)
-```
-
-### Adding Countries
-
-Edit config/countries.json:
-
-```json
-{
-  "name": "Country Name",
-  "code": "XX",
-  "flag": "🇽🇽",
-  "aliases": ["English Name", "Native Name", "French Name", "German Name", "Spanish Name"]
-}
-```
-
-### Adding Platforms
-
-Edit config/platforms.json:
-
-```json
-[
-  "example.com",
-  "social.example.com"
-]
-```
-
-Platform matching uses simple string inclusion (e.g., “linkedin.com” matches “www.linkedin.com”).
-
-### Customizing Highlight Styles
-
-Edit config/styles.js:
-
-```javascript
-export const HIGHLIGHT_STYLES = {
-  subtle: {
-    text: { /* CSS properties */ },
-    page: null
-  },
-  normal: {
-    text: { /* CSS properties */ },
-    page: null
-  },
-  assertive: {
-    text: { /* CSS properties */ },
-    page: { /* CSS properties */ }
-  }
-};
-```
-
-Changes require extension reload (visit `chrome://extensions/` and click reload icon).
-
-### Adjusting Profile Detection
-
-Edit `PROFILE_CONTAINER_SELECTORS` in config/styles.js to improve per-profile border detection for specific platforms.
-
-### Performance Notes
-
-* **Optimized scanning:** Checks flags first (fast), then aliases (slower)
-* **Debounced observer:** Waits 300 ms after DOM changes before scanning
-* **Selective scanning:** Only processes visible text nodes
-* **Cached patterns:** Compiles regex patterns once at initialization
-
-Expected performance impact: <100ms on initial page load, negligible during scrolling.
-
-### Troubleshooting
+## Troubleshooting
 
 **Highlighting not working:**
 
