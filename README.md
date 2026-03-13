@@ -19,7 +19,7 @@ A Chromium browser extension that highlights people and organizations as well as
 ## Installation
 
 1. [**Go to the IA Defensa Country Highlighter page**](https://chromewebstore.google.com/detail/ia-defensa-country-highli/jjhldkllehdfgipblabnojkpfoohcogi) in the Chrome Web Store
-2. **Click “Add to Chrome”** (or equivalent for other Chromium browsers)
+2. **Click “Add to Chrome”** (or equivalent for [other Chromium browsers](https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium))
 
 ### Locally
 
